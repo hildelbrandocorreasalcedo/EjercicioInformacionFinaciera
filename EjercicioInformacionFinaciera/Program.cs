@@ -8,21 +8,19 @@ namespace EjercicioInformacionFinaciera
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            int saldoApertura;          
-            int saldoRestar;
-            int consignar;
-            int saldoSumar;
-            int retirar;
-            int saldoFinal;
+            int saldoApertura = 0;
+            int saldoRestar = 0;
+            int consignar = 0;
+            int saldoSumar = 0;
+            int retirar = 0;
             int edad;
             string identificacion;
             string nombre;
-            string buscar;
-            string mensaje;
             Double Cuenta;
             ConsoleKeyInfo opcion;
+
 
             int OpcionSeleccionada = 0;
             int x;
@@ -45,51 +43,63 @@ namespace EjercicioInformacionFinaciera
                     {
                         case 1:
 
-                            
-                               
-                                    Console.Clear();
-                                    Console.WriteLine("*  Dijite Los Siguientes Datos de la Cuenta financiera:  *\n\n");
-                                    Console.Write("Digite Numero de Cuenta:");
-                                    edad = int.Parse(Console.ReadLine());
 
-                                    Console.Write("Identificacion:");
-                                    identificacion = Console.ReadLine();
 
-                                    Console.Write("Nombre:");
-                                    nombre = Console.ReadLine();
+                            Console.Clear();
+                            Console.WriteLine("*  Dijite Los Siguientes Datos de la Cuenta financiera:  *\n\n");
+                            Console.Write("Digite Numero de Cuenta:");
+                            edad = int.Parse(Console.ReadLine());
 
-                                    Console.Write("Dijite Saldo de apertura:");
-                                    saldoApertura = Convert.ToInt32(Console.ReadLine());
-                            
+                            Console.Write("Identificacion:");
+                            identificacion = Console.ReadLine();
+
+                            Console.Write("Nombre:");
+                            nombre = Console.ReadLine();
+
+                            Console.Write("Dijite Saldo de apertura:");
+                            saldoApertura = Convert.ToInt32(Console.ReadLine());
+
                            
+                            Console.WriteLine("Presione una tecla para volver al menu principal");
+                             Console.ReadKey();
+                            Console.Clear();
+
+                            break;
+                        case 2:
+                            Console.Clear();
                             Console.WriteLine("\n\n * **  Consignacion de cuenta finaciera:  ***");
                             Console.Write("Dijite Saldo a Consignar:");
                             saldoSumar = Convert.ToInt32(Console.ReadLine());
                             consignar = saldoSumar + saldoApertura;
                             Console.WriteLine($"su saldo actual es ahora: {consignar}\n\n");
-
+                            Console.WriteLine("Presione una tecla para volver al menu principal");
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
+                        case 3:
+                            Console.Clear();
                             Console.WriteLine("***  restirar de cuenta finaciera:  ***");
                             Console.Write("Dijite Saldo a Retirar:");
                             saldoRestar = Convert.ToInt32(Console.ReadLine());
                             retirar = consignar - saldoRestar;
                             Console.WriteLine($"su saldo actual es ahora: {retirar}\n\n");
-
-                            Console.WriteLine("***  Consultar de cuenta finaciera:  ***");
-                            
-                            Console.WriteLine($"su cuenta financiera tiene al final: {retirar}\n\n");
-                            Console.ReadKey();
-
                             Console.WriteLine("Presione una tecla para volver al menu principal");
-                            opcion = Console.ReadKey();
-
+                            Console.ReadKey();
                             Console.Clear();
-                        
                             break;
-                       
+                        case 4:
+                            Console.Clear();
+                            Console.WriteLine("***  Consultar de cuenta finaciera:  ***");
+                            Console.WriteLine($"su cuenta financiera tiene al final:{retirar}\n\n");
+                            
+                            Console.WriteLine("Presione una tecla para volver al menu principal");
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
                     }
                 }
             }
+
         }
     }
-    
 }
